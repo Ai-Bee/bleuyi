@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: '/hero0.jpg', alt: 'Us in the woods' },
-  { src: '/hero1.jpg', alt: 'Proposal moment' },
-  { src: '/hero2.jpg', alt: 'Our goofy selfie' },
-  { src: '/hero3.jpg', alt: 'Engagement shoot' },
+  { src: 'https://ik.imagekit.io/bleuyi/hero0.jpg?updatedAt=1747502171824', alt: 'Us in the woods' },
+  { src: 'https://ik.imagekit.io/bleuyi/hero1.jpg?updatedAt=1747502173203', alt: 'Proposal moment' },
+  { src: 'https://ik.imagekit.io/bleuyi/hero2.jpg?updatedAt=1747502171054', alt: 'Our goofy selfie' },
+  { src: 'https://ik.imagekit.io/bleuyi/hero3.jpg?updatedAt=1747502174115', alt: 'Engagement shoot' },
 ];
 
 export default function HeroAccordion() {
