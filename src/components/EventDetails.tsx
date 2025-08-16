@@ -8,12 +8,12 @@ export default function EventDetails() {
   ];
   
   return (
-    <div className="bg-orange-50 dark:bg-[#fbc4ab] p-8 w-full rounded-lg shadow-sm">
+    <div className="bg-orange-50 dark:bg-[#c24040da] p-8 w-full rounded-lg shadow-sm">
       <div className="flex flex-col md:flex-row justify-between max-w-6xl mx-auto mb-16">
         {/* When section */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
           <h2 className="text-gray-800 font-medium dark:text-white mb-4">When</h2>
-          <h3 className="text-coral-500 dark:text-white text-3xl md:text-4xl font-light mb-6">Saturday, November 15th, 2025</h3>
+          <h3 className="text-coral-500 dark:text-white text-3xl md:text-4xl font-light mb-6">Saturday, November 8th, 2025</h3>
           
           <div className="text-coral-400 dark:text-white text-xl mb-2">
             Reception: 2pm–5pm
@@ -30,7 +30,7 @@ export default function EventDetails() {
         {/* Where section */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-gray-800 font-medium mb-4 dark:text-white">Where</h2>
-          <h3 className="text-coral-500 text-3xl md:text-4xl font-light mb-6 dark:text-white">Uyo Akwa Ibom</h3>
+          <h3 className="text-coral-500 text-3xl md:text-4xl font-light mb-6 dark:text-white">Uyo, Akwa Ibom</h3>
           
           {/* <div className="text-coral-400 text-xl mb-2">
             123 Demo Street

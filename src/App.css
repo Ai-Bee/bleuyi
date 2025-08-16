@@ -29,3 +29,72 @@ body {
   cursor: url('/public/cupid-svgrepo-com.svg'), auto; /* Custom cursor */
 
   }
+
+/* Scroll-triggered animation classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(60px) scale(0.96);
+  transition: opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1), transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* Section fade/slide-in animation */
+.fade-slide-in {
+  animation: fadeSlideIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Text pop-in animation */
+.text-pop-in {
+  animation: textPopIn 1.1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes textPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+/* Central logo background for InvitationMessage */
+.invitation-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 620px;
+  height: 620px;
+
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
+.invitation-message-content {
+  position: relative;
+  z-index: 1;
+}
+.invitation-message-section {
+  position: relative;
+  overflow: hidden;
+}

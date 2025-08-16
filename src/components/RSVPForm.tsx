@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 // import { v4 as uuidv4 } from 'uuid';
 
@@ -80,7 +82,7 @@ export default function RSVPForm() {
           />
           <button
             type="submit"
-            className="w-full py-3 bg-pink-400 text-white rounded hover:bg-pink-700 transition"
+            className="w-full py-3 bg-[#f84622] text-white rounded hover:bg-pink-700 transition"
           >
             Submit RSVP
           </button>

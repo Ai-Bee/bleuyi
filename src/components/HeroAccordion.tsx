@@ -4,10 +4,12 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: 'https://ik.imagekit.io/bleuyi/hero0.jpg?updatedAt=1747502171824', alt: 'Us in the woods' },
-  { src: 'https://ik.imagekit.io/bleuyi/hero1.jpg?updatedAt=1747502173203', alt: 'Proposal moment' },
-  { src: 'https://ik.imagekit.io/bleuyi/hero2.jpg?updatedAt=1747502171054', alt: 'Our goofy selfie' },
+    { src: 'https://ik.imagekit.io/bleuyi/hero1.jpg?updatedAt=1747502173203', alt: 'Proposal moment' },
+
+  // { src: 'https://ik.imagekit.io/bleuyi/hero0.jpg?updatedAt=1747502171824', alt: 'Us in the woods' },
   { src: 'https://ik.imagekit.io/bleuyi/hero3.jpg?updatedAt=1747502174115', alt: 'Engagement shoot' },
+    { src: 'https://ik.imagekit.io/bleuyi/hero2.jpg?updatedAt=1747502171054', alt: 'Our goofy selfie' },
+
 ];
 
 export default function HeroAccordion() {
@@ -16,7 +18,7 @@ export default function HeroAccordion() {
   return (
     <section className="h-screen flex overflow-hidden relative ">
       <div data-aos="fade-down-right" className='absolute -bottom-2 left-0 z-30'>
-        <p className=' text-5xl md:text-8xl  text-white/30 hover:text-white transition-colors ease-in-out '>15th NOVEMBER, <span className='text-9xl'>2025</span></p>
+        <p className=' text-5xl md:text-8xl  text-white/30 hover:text-white transition-colors ease-in-out '>8th NOVEMBER, <span className='text-9xl'>2025</span></p>
       </div>
       <div data-aos="fade-down-left" className='absolute right-2 top-15 z-30'>
         <p className=' text-6xl md:text-8xl  text-white/30 hover:text-white transition-colors ease-in-out'>OUR LOVE <br/> STORY</p>
