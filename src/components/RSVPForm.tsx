@@ -1,90 +1,124 @@
 'use client';
-
+import axios from 'axios';
 import { useState } from 'react';
-// import { v4 as uuidv4 } from 'uuid';
-
-type Submission = {
-  id: string;
-  name: string;
-  email: string;
-  guests: number;
-  dietary: string;
-  status: 'pending';
-};
 
 export default function RSVPForm() {
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [guests, setGuests] = useState(1);
-  const [dietary, setDietary] = useState('');
+  const [phone, setPhone] = useState('');
+  const [plusOne, setPlusOne] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const validatePhone = (phone: string) =>
+    /^\+?\d{7,15}$/.test(phone);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const newSub: Submission = {
-      id: 'uuidv4()',
-      name,
-      email,
-      guests,
-      dietary,
-      status: 'pending',
-    };
-    const existing = JSON.parse(localStorage.getItem('rsvps') || '[]');
-    existing.push(newSub);
-    localStorage.setItem('rsvps', JSON.stringify(existing));
-    setSubmitted(true);
+    setError('');
+
+    if (!firstName.trim() || !lastName.trim()) {
+      setError('First name and last name are required.');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+    if (!validatePhone(phone)) {
+      setError('Please enter a valid phone number.');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+       await axios.post('https://bleuyi-admin.onrender.com/api/rsvp', {
+        name: `${firstName} ${lastName}`,
+        email,
+        phone      });
+
+      setSubmitted(true);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
     return (
       <section id="rsvp" className="bg-white py-24 px-6 text-center">
         <h2 className="text-2xl font-semibold mb-4">Thank you!</h2>
-        <p>We’ve received your RSVP. We’ll be in touch soon. ❤️</p>
-      </section>
+        <p>Your RSVP has been received. We look forward to celebrating with you! ❤️</p>
+      </section>    
     );
   }
 
   return (
-    <section id="rsvp" className="bg-white py-24 px-6">
+    <section id="rsvp" className="bg-white dark:bg-slate-500 py-24 px-6">
       <div className="max-w-md mx-auto">
-        <h2 className="text-3xl font-serif text-center mb-8">RSVP</h2>
+        <h2 className="text-3xl dark:text-gray-800 font-serif text-center mb-8">RSVP</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
+          {error && (
+            <div className="text-red-600 text-center mb-2">{error}</div>
+          )}
           <input
             required
             type="text"
-            placeholder="Your Name"
+            placeholder="First Name"
             className="w-full p-3 border rounded"
-            value={name}
-            onChange={e => setName(e.target.value)}
+            value={firstName}
+            onChange={e => setFirstName(e.target.value)}
+          />
+          <input
+            required
+            type="text"
+            placeholder="Last Name"
+            className="w-full p-3 border rounded"
+            value={lastName}
+            onChange={e => setLastName(e.target.value)}
           />
           <input
             required
             type="email"
-            placeholder="Your Email"
+            placeholder="Email"
             className="w-full p-3 border rounded"
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
           <input
             required
-            type="number"
-            min={1}
-            placeholder="Number of Guests"
+            type="tel"
+            placeholder="Phone Number"
             className="w-full p-3 border rounded"
-            value={guests}
-            onChange={e => setGuests(Number(e.target.value))}
+            value={phone}
+            onChange={e => setPhone(e.target.value)}
           />
-          <textarea
-            placeholder="Dietary Restrictions"
-            className="w-full p-3 border rounded"
-            value={dietary}
-            onChange={e => setDietary(e.target.value)}
-          />
+          <div className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              id="plusOne"
+              checked={plusOne}
+              onChange={e => setPlusOne(e.target.checked)}
+              className="accent-emerald-600"
+            />
+            <label htmlFor="plusOne" className="text-gray-700">
+              I am coming with a plus one
+            </label>
+          </div>
           <button
             type="submit"
             className="w-full py-3 bg-[#f84622] text-white rounded hover:bg-pink-700 transition"
+            disabled={loading}
           >
-            Submit RSVP
+            {loading ? 'Submitting...' : 'Submit RSVP'}
           </button>
         </form>
       </div>
