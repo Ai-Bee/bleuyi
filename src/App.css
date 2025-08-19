@@ -98,3 +98,13 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  .invitation-bg-logo {
+    width: 320px;
+    height: 320px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+  }
+}
