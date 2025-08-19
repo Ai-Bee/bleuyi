@@ -8,7 +8,7 @@ export default function EventDetails() {
   ];
   
   return (
-    <div className="bg-orange-50 dark:bg-[#c24040da] p-8 w-full rounded-lg shadow-sm">
+    <div id="wedding-day" className="bg-orange-50 dark:bg-[#c24040da] p-8 w-full rounded-lg shadow-sm">
       <div className="flex flex-col md:flex-row justify-between max-w-6xl mx-auto mb-16">
         {/* When section */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">

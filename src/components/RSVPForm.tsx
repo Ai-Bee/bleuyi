@@ -46,7 +46,7 @@ export default function RSVPForm() {
       setSubmitted(true);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      setError(err.message || 'Something went wrong.');
+      setError(err.status === 409 ? 'Your RSVP has already been submitted.' : err.message || 'Something went wrong.');
     } finally {
       setLoading(false);
     }
@@ -54,7 +54,7 @@ export default function RSVPForm() {
 
   if (submitted) {
     return (
-      <section id="rsvp" className="bg-white py-24 px-6 text-center">
+      <section id="rsvp" className="bg-white dark:text-slate-800 py-24 px-6 text-center">
         <h2 className="text-2xl font-semibold mb-4">Thank you!</h2>
         <p>Your RSVP has been received. We look forward to celebrating with you! ❤️</p>
       </section>    
@@ -67,14 +67,15 @@ export default function RSVPForm() {
         <h2 className="text-3xl dark:text-gray-800 font-serif text-center mb-8">RSVP</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div className="text-red-600 text-center mb-2">{error}</div>
+            <div className="text-red-600 bg-red-100 py-2 rounded-sm text-center mb-2">{error}</div>
           )}
           <input
             required
             type="text"
             placeholder="First Name"
-            className="w-full p-3 border rounded"
+            className={`w-full p-3 border rounded `}
             value={firstName}
+            readOnly={loading}
             onChange={e => setFirstName(e.target.value)}
           />
           <input
@@ -83,6 +84,7 @@ export default function RSVPForm() {
             placeholder="Last Name"
             className="w-full p-3 border rounded"
             value={lastName}
+            readOnly={loading}
             onChange={e => setLastName(e.target.value)}
           />
           <input
@@ -91,6 +93,7 @@ export default function RSVPForm() {
             placeholder="Email"
             className="w-full p-3 border rounded"
             value={email}
+            readOnly={loading}
             onChange={e => setEmail(e.target.value)}
           />
           <input
@@ -99,6 +102,7 @@ export default function RSVPForm() {
             placeholder="Phone Number"
             className="w-full p-3 border rounded"
             value={phone}
+            readOnly={loading}
             onChange={e => setPhone(e.target.value)}
           />
           <div className="flex items-center gap-2">
@@ -106,6 +110,7 @@ export default function RSVPForm() {
               type="checkbox"
               id="plusOne"
               checked={plusOne}
+              disabled={loading}
               onChange={e => setPlusOne(e.target.checked)}
               className="accent-emerald-600"
             />

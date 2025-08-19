@@ -2,7 +2,7 @@ import coupleLogo2 from '../../public/coupleLogo2.png'; // Update path/extension
 
 export default function InvitationMessage() {
   return (
-    <section className="invitation-message-section fade-slide-in flex flex-col items-center justify-center bg-[#f5f2ef] mx-auto h-screen text-center px-4">
+    <section id='our-story' className="invitation-message-section fade-slide-in flex flex-col items-center justify-center bg-[#f5f2ef] mx-auto h-screen text-center px-4">
       <img src={coupleLogo2} alt="Couple Logo" className="invitation-bg-logo" />
       <div className="invitation-message-content">
         <h1 className="text-xl font-light dark:text-red-600 text-gray-800 mb-4 text-pop-in">

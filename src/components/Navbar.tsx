@@ -26,10 +26,10 @@ export default function Navbar() {
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         <span className="text-xl font-semibold">Blessing & Uyi</span>
         <div className="hidden md:flex space-x-6">
-           <a href="#our-story">Our Story</a>
-          <a href="#wedding-day">Schedule</a>
-          <a href="#registry">Registry</a>
-          <a href="#rsvp">RSVP</a>
+          <a href="#our-story" onClick={e => { e.preventDefault(); document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' }); }}>Our Story</a>
+          <a href="#wedding-day" onClick={e => { e.preventDefault(); document.getElementById('wedding-day')?.scrollIntoView({ behavior: 'smooth' }); }}>Schedule</a>
+          <a href="#registry" onClick={e => { e.preventDefault(); document.getElementById('registry')?.scrollIntoView({ behavior: 'smooth' }); }}>Registry</a>
+          <a href="#rsvp" onClick={e => { e.preventDefault(); document.getElementById('rsvp')?.scrollIntoView({ behavior: 'smooth' }); }}>RSVP</a>
         </div>
         {/* Hamburger Menu for Mobile */}
         <button
@@ -57,33 +57,49 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden mt-4 bg-gray-800 text-white rounded-lg shadow-lg">
         <a
-            href="#our-story"
-            className="block px-4 py-2 hover:bg-gray-700"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Our Story
-          </a>
-          <a
-            href="#wedding-day"
-            className="block px-4 py-2 hover:bg-gray-700"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Schedule
-          </a>
-          <a
-            href="#registry"
-            className="block px-4 py-2 hover:bg-gray-700"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Registry
-          </a>
-          <a
-            href="#rsvp"
-            className="block px-4 py-2 hover:bg-gray-700"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            RSVP
-          </a>
+          href="#our-story"
+          className="block px-4 py-2 hover:bg-gray-700"
+          onClick={e => {
+            e.preventDefault();
+            document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false);
+          }}
+        >
+          Our Story
+        </a>
+        <a
+          href="#wedding-day"
+          className="block px-4 py-2 hover:bg-gray-700"
+          onClick={e => {
+            e.preventDefault();
+            document.getElementById('wedding-day')?.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false);
+          }}
+        >
+          Schedule
+        </a>
+        <a
+          href="#registry"
+          className="block px-4 py-2 hover:bg-gray-700"
+          onClick={e => {
+            e.preventDefault();
+            document.getElementById('registry')?.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false);
+          }}
+        >
+          Registry
+        </a>
+        <a
+          href="#rsvp"
+          className="block px-4 py-2 hover:bg-gray-700"
+          onClick={e => {
+            e.preventDefault();
+            document.getElementById('rsvp')?.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false);
+          }}
+        >
+          RSVP
+        </a>
         </div>
       )}
     </nav>

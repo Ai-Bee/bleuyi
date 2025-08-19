@@ -6,7 +6,7 @@ export default function InvitationFooter() {
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
   return (
-    <div className="w-full fade-slide-in">
+    <div id='rsvp' className="w-full fade-slide-in">
       {/* Hero section with invitation text and RSVP button */}
       <div className="bg-orange-50 dark:bg-[#fbc4ab] py-16 px-4 text-center">
         <h2 className="text-coral-400 dark:text-white text-3xl md:text-5xl font-light max-w-3xl mx-auto leading-relaxed text-pop-in">
@@ -24,10 +24,10 @@ export default function InvitationFooter() {
         </div>
       {/* RSVP Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 bg-opacity-50">
           <div className="bg-white rounded-lg shadow-lg max-w-lg w-full relative">
             <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              className="absolute top-10 md:top-8 right-2 text-slate-800 hover:text-gray-900 text-4xl font-bold"
               onClick={handleCloseModal}
               aria-label="Close"
             >
