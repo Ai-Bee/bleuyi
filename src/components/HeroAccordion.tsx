@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const images = [
   { src: 'https://ik.imagekit.io/bleuyi/hero1.jpg?updatedAt=1747502173203', alt: 'Proposal moment' },
-  { src: 'https://ik.imagekit.io/bleuyi/hero4.jpg', alt: 'Engagement shoot' },
+  { src: 'https://res.cloudinary.com/dehxilejf/image/upload/v1756507171/IMG_2656_xghy5o.jpg', alt: 'Engagement shoot' },
   { src: 'https://ik.imagekit.io/bleuyi/hero2.jpg?updatedAt=1747502171054', alt: 'Our goofy selfie' },
 ];
 
