@@ -28,7 +28,7 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-6">
           <a href="#our-story" onClick={e => { e.preventDefault(); document.getElementById('our-story')?.scrollIntoView({ behavior: 'smooth' }); }}>Our Story</a>
           <a href="#wedding-day" onClick={e => { e.preventDefault(); document.getElementById('wedding-day')?.scrollIntoView({ behavior: 'smooth' }); }}>Schedule</a>
-          <a href="#registry" onClick={e => { e.preventDefault(); document.getElementById('registry')?.scrollIntoView({ behavior: 'smooth' }); }}>Registry</a>
+          <a href="#gifting" onClick={e => { e.preventDefault(); document.getElementById('gifting')?.scrollIntoView({ behavior: 'smooth' }); }}>Gifting</a>
           <a href="#rsvp" onClick={e => { e.preventDefault(); document.getElementById('rsvp')?.scrollIntoView({ behavior: 'smooth' }); }}>RSVP</a>
         </div>
         {/* Hamburger Menu for Mobile */}
@@ -79,15 +79,15 @@ export default function Navbar() {
           Schedule
         </a>
         <a
-          href="#registry"
+          href="#gifting"
           className="block px-4 py-2 hover:bg-gray-700"
           onClick={e => {
             e.preventDefault();
-            document.getElementById('registry')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('gifting')?.scrollIntoView({ behavior: 'smooth' });
             setIsMenuOpen(false);
           }}
         >
-          Registry
+          Gifting
         </a>
         <a
           href="#rsvp"

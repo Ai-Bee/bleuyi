@@ -14,10 +14,10 @@ export default function Gifting() {
   };
 
   return (
-    <section id="registry" className="bg-[#fdfbf9] dark:bg-slate-800 py-24 px-6 text-center text-gray-800">
+    <section id="gifting" className="bg-[#fdfbf9] dark:bg-slate-800 py-24 px-6 text-center text-gray-800">
       <div className="max-w-2xl mx-auto">
         <Gift className="mx-auto mb-6 w-10 h-10 dark:text-pink-300 text-[#f84622]" />
-        <h2 className="text-4xl font-serif dark:text-pink-200 mb-6">Gifting & Registry</h2>
+        <h2 className="text-4xl font-serif dark:text-pink-200 mb-6">Gifting</h2>
         <p className="text-lg mb-8 dark:text-pink-200">
           Your presence is our greatest gift — but if you’d like to contribute to our honeymoon fund or future together, you can do so below ❤️
         </p>

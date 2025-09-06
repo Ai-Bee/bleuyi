@@ -13,7 +13,7 @@ export default function EventDetails() {
         {/* When section */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
           <h2 className="text-gray-800 font-medium dark:text-white mb-4">When</h2>
-          <h3 className="text-coral-500 dark:text-white text-3xl md:text-4xl font-light mb-6">Saturday, November 8th, 2025</h3>
+          <h3 className="text-coral-500 dark:text-white text-3xl md:text-4xl font-light mb-6">Saturday, November 15th, 2025</h3>
           
           <div className="text-coral-400 dark:text-white text-xl mb-2">
             Reception: 2pm–5pm
