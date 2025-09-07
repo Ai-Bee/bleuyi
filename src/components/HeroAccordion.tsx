@@ -37,7 +37,7 @@ export default function HeroAccordion() {
   return (
     <section className="h-screen flex overflow-hidden relative">
       <div data-aos="fade-down-right" className='absolute -bottom-2 left-0 z-30'>
-        <p className=' text-5xl md:text-8xl  text-white/30 hover:text-white transition-colors ease-in-out '>8th NOVEMBER, <span className='text-9xl'>2025</span></p>
+        <p className=' text-5xl md:text-8xl  text-white/30 hover:text-white transition-colors ease-in-out '>15th NOVEMBER, <span className='text-9xl'>2025</span></p>
       </div>
       <div data-aos="fade-down-left" className='absolute right-2 top-15 z-30'>
         <p className=' text-6xl md:text-8xl  text-white/30 hover:text-white transition-colors ease-in-out'>OUR LOVE <br/> STORY</p>
