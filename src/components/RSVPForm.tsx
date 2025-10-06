@@ -12,8 +12,8 @@ export default function RSVPForm() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const validateEmail = (email: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  // const validateEmail = (email: string) =>
+  //   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const validatePhone = (phone: string) =>
     /^\+?\d{7,15}$/.test(phone);
@@ -26,10 +26,10 @@ export default function RSVPForm() {
       setError('First name and last name are required.');
       return;
     }
-    if (!validateEmail(email)) {
-      setError('Please enter a valid email address.');
-      return;
-    }
+    // if (!validateEmail(email)) {
+    //   setError('Please enter a valid email address.');
+    //   return;
+    // }
     if (!validatePhone(phone)) {
       setError('Please enter a valid phone number.');
       return;
@@ -88,7 +88,7 @@ export default function RSVPForm() {
             onChange={e => setLastName(e.target.value)}
           />
           <input
-            required
+            
             type="email"
             placeholder="Email"
             className="w-full p-3 border rounded"
