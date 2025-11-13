@@ -30,10 +30,13 @@ export default function RSVPForm() {
     //   setError('Please enter a valid email address.');
     //   return;
     // }
-    if (!validatePhone(phone)) {
-      setError('Please enter a valid phone number.');
-      return;
+    if (phone) {
+      if (!validatePhone(phone)) {
+        setError('Please enter a valid phone number.');
+        return;
+      }
     }
+
 
     setLoading(true);
 
@@ -97,7 +100,6 @@ export default function RSVPForm() {
             onChange={e => setEmail(e.target.value)}
           />
           <input
-            required
             type="tel"
             placeholder="Phone Number"
             className="w-full p-3 border rounded"
